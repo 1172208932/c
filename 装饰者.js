@@ -16,7 +16,7 @@
  //接下来增加两个装饰类，分别是导弹和原子弹:
 
  var MissileDecorator = function( plane ){
-     this,plane = plane
+     this.plane = plane
  }
  MissileDecorator.prototype.fire = function(){
      this.plane.fire();
