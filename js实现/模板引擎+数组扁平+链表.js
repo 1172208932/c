@@ -81,7 +81,10 @@ var head = {
         val: 2,
         next: {
             val: 3,
-            next: null
+            next:{
+                val: 4,
+                next: null
+            }
         }
     }
 }
@@ -89,24 +92,33 @@ function fn(head, n) {
     let tar = head
     let temp = head
     while (temp.next) {
-        console.log( temp.next)
+        console.log( temp)
         console.log(n)
         if (!n) {
+            console.log( tar,'tar')
             tar = tar.next
         }
         n = n ? n - 1 : n
         temp = temp.next
     }
+    console.log( temp)
+    console.log( tar)
+    // console.log( head,'head')
+
+
     if (n) {
+        console.log(n,'nnn')
         head = head.next
     } else {
         if (tar.next)
-            tar.next = tar.next.next
+            {tar.next = tar.next.next}
         else
-            tar.next = null
+            {tar.next = null 
+            }
+            console.log(tar,'n')         
     }
     console.log(head)
     return head
 };
 
-fn(head, 1);
+fn(head, 2);

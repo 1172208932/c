@@ -32,3 +32,16 @@ var throttle = function (fn, interval) {
 window.onresize = throttle(function(){
     console.log(1)
 },500);
+
+
+const debounce = function(func, interval){
+    let timerId;
+    return function(e){
+        clearTimeout(timerId)
+        timerId = setTimeout(function(){
+            func.apply()
+        },interval)
+    }
+}
+
+debounce(apiCall,200)
