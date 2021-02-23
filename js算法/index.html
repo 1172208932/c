@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // var ListNode = function (val) {
+    //     this.val = val
+    //     this.next = null
+    // }
+
+    // var addTwoNumbers = function (head) {
+    //     let pre = head, cur = null;
+    //     while(pre){
+    //         cur = { val:pre.val, next:cur};
+    //         pre = pre.next
+    //     }
+    //     console.log(cur)
+    // };
+
+    // addTwoNumbers({ val: 2 ,next:{val: 9,next:null }})
+
+    var findContentChildren = function (g, s) {
+
+        // let littleChid = Math.min.apply(null, g);
+        let max = 0;
+        g = g.sort(function(a,b){return a>b?1:-1})
+        s = s.sort(function(a,b){return a>b?1:-1})
+        console.log(s)
+        while(s.length && g.length){
+            if(g[0] > s[0]){
+                g[0] = g[0] - s[0];
+            }else{
+                g.shift();
+                max += 1;
+            }
+            s.shift()
+        }
+
+        console.log(max)
+
+        return max
+
+    };
+
+    findContentChildren([10,9,8,7], [5,6,7,8])
+</script>
+
+</html>
